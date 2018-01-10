@@ -25,18 +25,18 @@ Used for managing trips for individuals. Allows a user to search the events,rest
 
 ## Requirements
 
-Node
-Express
-React
-Sequelizer
-Passport
-body-parser
-Axios
-bluebird
-passport-local
-react-dom
-webpack
-babel
+* Node
+* Express
+* React
+* Sequelizer
+* Passport
+* body-parser
+* Axios
+* bluebird
+* passport-local
+* react-dom
+* webpack
+* babel
 
 ## Development
 

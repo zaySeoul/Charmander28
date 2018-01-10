@@ -23,7 +23,7 @@ Usage
 
 Used for managing trips for individuals. Allows a user to search the events,restaurents,activities around the destination place. Users can also save their trips and collab with other users.
 
-Requirements
+## Requirements
 
 Node
 Express

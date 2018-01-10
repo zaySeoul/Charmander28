@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('tripcollab', 'root', '', {
   host: 'localhost',
-  dialect:'mysql' | 'sqlite' | 'postgres' | 'mssql',
+  dialect: 'mysql' | 'sqlite' | 'postgres' | 'mssql',
 
   pool: {
     max: 5,

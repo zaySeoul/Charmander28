@@ -45,3 +45,7 @@ Used for managing trips for individuals. Allows a user to search the events,rest
 From within the root directory:
 
 npm install
+
+## Contributing
+
+See CONTRIBUTING.md for contribution guidelines

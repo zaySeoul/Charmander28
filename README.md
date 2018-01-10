@@ -1,15 +1,15 @@
-Trip Collab
+#Trip Collab
 
 A collaborative way to organize group trips
 
-Team
+#Team
 
   - Daniel Kelly
   - Peter Wang
   - Steven Lee
   - Tejaswi Guvvala
 
-Table of Contents
+#Table of Contents
 
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
@@ -19,7 +19,7 @@ Table of Contents
 1. [Roadmap](#roadmap)
 1. [Contributing](#contributing)
 
-Usage
+#Usage
 
 Used for managing trips for individuals. Allows a user to search the events,restaurents,activities around the destination place. Users can also save their trips and collab with other users.
 

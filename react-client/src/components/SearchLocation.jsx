@@ -19,7 +19,8 @@ class SearchLocation extends React.Component {
 
   handleReturnKey(e) {
     if (e.key === 'Enter') {
-      this.props.changeLoc(this.state.location);
+      this.props.searchLocation(this.state.location);
+      console.log('return key function', this.state.location);
     }
   }
 

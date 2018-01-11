@@ -31,3 +31,6 @@ node_modules/
 
 # heroku local environment
 .env
+
+.DS_Store
+server/config/config.js

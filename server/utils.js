@@ -12,15 +12,25 @@ let filterBusinesses = (array) => {
       rating: business.rating
     };
   });
-}
+};
 
-let getBusinessesFromYelp = (term, location, price, cb) => {
+let getBusinessesFromYelp = (term, categories, location, price, cb) => {
   // parameters:
 
   // let queryURL = `https://api.yelp.com/v3/businesses/search?categories=
   // ${category}&location=${location}&price=${price}&limit=10&sort_by=rating`;
+  if (!categories) {
+    categories = '';
+  } else if (Array.isArray(categories)) {
+    categories = categories.join(',');
+  }
 
-  let queryURL = `https://api.yelp.com/v3/businesses/search?term=${category}&location=${location}&price=${price}&limit=10&sort_by=rating`;
+  if (!price) {
+    price = '';
+  }
+
+
+  let queryURL = `https://api.yelp.com/v3/businesses/search?term=${term}&categories=${categories}&location=${location}&price=${price}&limit=10&sort_by=rating`;
 
 
   axios({

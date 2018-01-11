@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import AddCategory from '../components/AddCategory.jsx';
 
-
-class App extends React.Component {
+class Index extends React.Component {
+  constructor(props) {
+    console.log('index');
+    super(props);
+  }
   render() {
     return (<div>
       <h1>Trip collab</h1>
+      <AddCategory />
     </div>);
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Index />, document.getElementById('app'));

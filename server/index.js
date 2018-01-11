@@ -14,11 +14,10 @@ app.use(bodyParser.json());
 app.use(express.static(`${__dirname}/../react-client/dist`));
 
 app.get('/eat', (req, res) => {
-  // store info from req body
-  //   const location = location the user passes in
-  //   const cost     = cost the user selects
-  console.log('eat request')
-  utils.getBusinessesFromYelp((data) => {
+  const category = 'restaurants';
+  const location = 'chicago';
+  const cost     = 1;
+  utils.getBusinessesFromYelp(category, location, cost, (data) => {
     res.send(data);
   });
 });

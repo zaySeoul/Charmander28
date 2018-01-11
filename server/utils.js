@@ -13,28 +13,24 @@ const filterBusinesses = (array) => {
   });
 }
 
-const getBusinessesFromYelp = (cb) => {
-  // parameters: category, location, price
-  // const queryURL = `https://api.yelp.com/v3/businesses/search?categories=
-  // ${category}&sort_by=rating&limit=10&location=${location}&price=${price}`;
-  const testURL = 'https://api.yelp.com/v3/businesses/search?categories=restaurants&sort_by=rating&limit=10&location=chicago&price=1';
+const getBusinessesFromYelp = (category, location, price, cb) => {
+  // parameters:
+  const queryURL = `https://api.yelp.com/v3/businesses/search?categories=
+  ${category}&sort_by=rating&limit=10&location=${location}&price=${price}`;
 
   axios({
     method: 'get',
-    url: testURL,
+    url: queryURL,
     headers: {
       'Authorization': `Bearer ${config.YELP_API_KEY}`
-    }
-  }).then((response) => {
-    // name, imageUrl
-    // .id .name .image_url .url .rating
-    cb(filterBusinesses(response.data.businesses));
-    // console.log(response.data);
+    },
   })
-.catch((error) => {
-  console.log(error);
-});
-
+    .then((response) => {
+      cb(filterBusinesses(response.data.businesses));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
 module.exports.getBusinessesFromYelp = getBusinessesFromYelp;

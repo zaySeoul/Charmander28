@@ -15,6 +15,7 @@ class SearchLocation extends React.Component {
     this.setState({
       location: e.target.value,
     });
+    console.log('input data', this.state.location);
   }
 
   handleReturnKey(e) {
@@ -44,7 +45,6 @@ class SearchLocation extends React.Component {
           onChange={this.handleInputChange}
           onKeyPress={this.handleReturnKey}
           onBlur={this.onSetDestination}
-
         />
       </div>
     );

@@ -18,13 +18,14 @@ class Index extends React.Component {
     };
     this.onChangeLocation = this.onChangeLocation.bind(this);
     this.onChangePrice = this.onChangePrice.bind(this);
+    this.setActivities = this.setActivities.bind(this);
   }
 
   onChangeLocation(destination) {
     this.setState({
       location: destination,
     }, ()=>{console.log('Destination has been set!', this.state.location);});
-    
+
   }
 
   onChangePrice(value) {

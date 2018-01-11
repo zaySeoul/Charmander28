@@ -16,7 +16,8 @@ const filterBusinesses = (array) => {
 const getBusinessesFromYelp = (category, location, price, cb) => {
   // parameters:
   const queryURL = `https://api.yelp.com/v3/businesses/search?categories=
-  ${category}&sort_by=rating&limit=10&location=${location}&price=${price}`;
+  ${category}&location=${location}&price=${price}`;
+  // &sort_by=rating
 
   axios({
     method: 'get',

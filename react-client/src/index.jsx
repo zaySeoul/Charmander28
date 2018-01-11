@@ -24,7 +24,7 @@ class Index extends React.Component {
     this.setState({
       location: destination,
     }, ()=>{console.log('Destination has been set!', this.state.location);});
-    
+
   }
 
   onChangePrice(value) {

@@ -1,8 +1,9 @@
 const axios = require('axios');
 const config = require('./config/config');
 
-const filterBusinesses = (array) => {
+let filterBusinesses = (array) => {
   return array.map(business => {
+    console.log('business categories array: ', business.categories);
     return {
       id: business.id,
       name: business.name,
@@ -13,11 +14,14 @@ const filterBusinesses = (array) => {
   });
 }
 
-const getBusinessesFromYelp = (category, location, price, cb) => {
+let getBusinessesFromYelp = (term, location, price, cb) => {
   // parameters:
-  const queryURL = `https://api.yelp.com/v3/businesses/search?categories=
-  ${category}&location=${location}&price=${price}`;
-  // &sort_by=rating
+
+  // let queryURL = `https://api.yelp.com/v3/businesses/search?categories=
+  // ${category}&location=${location}&price=${price}&limit=10&sort_by=rating`;
+
+  let queryURL = `https://api.yelp.com/v3/businesses/search?term=${category}&location=${location}&price=${price}&limit=10&sort_by=rating`;
+
 
   axios({
     method: 'get',

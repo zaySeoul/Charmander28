@@ -1,43 +1,45 @@
 import React from 'react';
 
 class SearchLocation extends React.Component {
-  constructor (props) {
-    super (props);
+  constructor(props) {
+    super(props);
     this.state = {
-      location: ''
+      location: '',
     };
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handleInputChange (e) {
+  handleInputChange(e) {
     this.setState({
-      location: e.target.value
-    })
-    console.log('input data',this.state.location);
+      location: e.target.value,
+    });
+    console.log('input data', this.state.location);
   }
 
-  handleReturnKey (e) {
+  handleReturnKey(e) {
     if (e.key === 'Enter') {
       this.props.searchLocation(this.state.location);
-      console.log('return key function',this.state.location);
+      console.log('return key function', this.state.location);
     }
   }
 
-  handleClick (e) {
+  handleClick(e) {
     e.preventDefault();
     this.props.searchLocation(this.target.name);
   }
 
-  render () {
+  render() {
     return (
       <div className="search-bar destination">
-         <input
-           className="form-control"
-           type="text"
-           value={this.state.value}
-           onChange={this.handleInputChange.bind(this)}
-         />
+        <input
+          className="form-control"
+          type="text"
+          value={this.state.value}
+          placeholder="What's your destination"
+          onChange={this.handleInputChange}
+        />
       </div>
-    )
+    );
   }
 }
 

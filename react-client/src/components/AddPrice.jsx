@@ -1,37 +1,37 @@
 import React from 'react';
 
 class AddPrice extends React.Component {
-  constructor (props) {
-    super (props);
-       this.state = {
-        price: ''
-       };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      price: '',
+    };
+  }
 
-  priceHandler (e) {
+  priceHandler(e) {
     this.setState({
-      price: e.target.value
+      price: e.target.value,
     });
   }
 
-  render () {
+  render() {
     return (
       <div>
         <label>
-          <input type="radio" name="price" value="$" onClick={() => {this.priceHandler.bind(this)}}/>$
+          <input type="radio" name="price" value="$" onClick={() => { this.priceHandler.bind(this)} } />$
         </label>
         <label>
-          <input type="radio" name="price" value="$$" onClick={() => {this.priceHandler.bind(this)}}/>$$
+          <input type="radio" name="price" value="$$" onClick={() => { this.priceHandler.bind(this)}} />$$
         </label>
         <label>
-          <input type="radio" name="price" value="$$$" onClick={() => {this.priceHandler.bind(this)}}/>$$$
+          <input type="radio" name="price" value="$$$" onClick={() => { this.priceHandler.bind(this)}} />$$$
         </label>
         <label>
-          <input type="radio" name="price" value="$$$$" onClick={() => {this.priceHandler.bind(this)}}/>$$$$
+          <input type="radio" name="price" value="$$$$" onClick={() => { this.priceHandler.bind(this)}} />$$$$
         </label>
       </div>
 
-    )
+    );
   }
 }
 

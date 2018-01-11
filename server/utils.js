@@ -1,5 +1,5 @@
 const axios = require('axios');
-const config = require('./config/config');
+// const config = require('./config/config');
 
 let filterBusinesses = (array) => {
   return array.map(business => {
@@ -37,7 +37,7 @@ let getBusinessesFromYelp = (term, categories, location, price, cb) => {
     method: 'get',
     url: queryURL,
     headers: {
-      'Authorization': `Bearer ${config.YELP_API_KEY}`
+      'Authorization': `Bearer ${process.env.YELP_API_KEY}`
     },
   })
     .then((response) => {

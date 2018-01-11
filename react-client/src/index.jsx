@@ -16,8 +16,9 @@ class Index extends React.Component {
       <div>
         <h1>Trip collab</h1>
         <div>
-          <SearchLocation/>
-          <AddPrice/>
+          <SearchLocation />
+          <AddPrice />
+          <AddCategory />
         </div>
       </div>
     );

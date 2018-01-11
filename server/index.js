@@ -21,21 +21,28 @@ app.get('/eat', (req, res) => {
   // }
   const requestBody = {
     location: 'chicago',
-    cost: 4
+    categories: ['asian', 'mexican'],
+    price: 4
   };
-  const category = 'restaurants';
+  const term = 'restaurants';
   // const location = 'req.body.location';
   // const cost = req.body.cost;
   const location = requestBody.location;
-  const cost = requestBody.cost;
+  const price = requestBody.price;
+  const categories = requestBody.categories;
 
-  utils.getBusinessesFromYelp(category, location, cost, (data) => {
+  utils.getBusinessesFromYelp(term, categories, location, price, (data) => {
     res.send(data);
   });
 });
 
 app.get('/explore', (req, res) => {
-  utils.getBusinessesFromYelp(category, location, cost, (data) => {
+  const term = 'tourism';
+  const categories = ['landmarks', 'galleries', 'parks', 'musuems'];
+  const location = req.body.location || 'chicago';
+  const price = '';
+
+  utils.getBusinessesFromYelp(term, categories, location, price, (data) => {
     res.send(data);
   });
 });
@@ -55,13 +62,14 @@ app.get('/sleep', (req, res) => {
     cost: '1,2,3'
   };
 
-  const category = 'hotels';
+  const term = 'hotels';
   // const location = req.body.location;
   // const cost = req.body.cost;
   const location = requestBody.location;
-  const cost = requestBody.cost;
+  const price = requestBody.cost;
+  const categories = '';
 
-  utils.getBusinessesFromYelp(category, location, cost, (data) => {
+  utils.getBusinessesFromYelp(term, categories, location, price, (data) => {
     res.send(data);
   });
 });

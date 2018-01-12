@@ -19,7 +19,7 @@ class AddPrice extends React.Component {
     this.props.changeBudget(this.state.price);
   }
 
-  render () {
+  render() {
     return (
       <div>
         <label>
@@ -36,7 +36,7 @@ class AddPrice extends React.Component {
         </label>
       </div>
 
-    )
+    );
   }
 }
 

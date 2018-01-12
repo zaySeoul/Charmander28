@@ -4,14 +4,16 @@ import $ from 'jquery';
 
 class AddCategory extends React.Component {
   constructor(props) {
-    console.log('im here in AddCategory');
+    //console.log('im here in AddCategory', props);
     super(props);
     this.state = {
       category: [],
     };
     this.onCheckBoxClick = this.onCheckBoxClick.bind(this);
     this.setData = this.setData.bind(this);
+    this.setUserActivities = this.setUserActivities.bind(this);
   }
+
 
   //  collecting the array of selected checkbox values onClick event
   onCheckBoxClick(e) {
@@ -31,11 +33,15 @@ class AddCategory extends React.Component {
   setData(data) {
     this.setState({
       category: data,
-    });
+    }, () => { this.setUserActivities(); });
+  }
+
+  setUserActivities() {
+    this.props.setActivities(this.state.category);
   }
 
   render() {
-    console.log('state', this.state.category);
+    //console.log('state', this.state.category);
     return (
       <div className="container">
         <div className="row">
@@ -75,3 +81,15 @@ class AddCategory extends React.Component {
 }
 
 export default AddCategory;
+
+
+
+
+
+
+
+
+
+
+
+

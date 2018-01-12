@@ -6,6 +6,7 @@ class AddPrice extends React.Component {
     this.state = {
       price: '',
     };
+
     this.priceHandler = this.priceHandler.bind(this);
   }
 

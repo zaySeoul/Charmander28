@@ -15,9 +15,8 @@ class SearchLocation extends React.Component {
     this.setState({
       location: e.target.value,
     });
-
     console.log('input data', this.state.location);
-
+    console.log('input data', this.state.location);
   }
 
   handleReturnKey(e) {
@@ -32,6 +31,7 @@ class SearchLocation extends React.Component {
     e.preventDefault();
     this.props.searchLocation(this.target.name);
   }
+
 
   onSetDestination() {
     this.props.changeLoc(this.state.location);

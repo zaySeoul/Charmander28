@@ -33,6 +33,7 @@ class Index extends React.Component {
       price: value,
     }, ()=>{console.log('Price has been set!', this.state.price);});
 
+    this.setActivities = this.setActivities.bind(this);
   }
 
   setActivities(data) {

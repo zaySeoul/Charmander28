@@ -6,6 +6,7 @@ import AddPrice from './components/AddPrice.jsx';
 import Header from './components/navHeader.jsx';
 import AddCategory from './components/AddCategory.jsx';
 import axios from 'axios';
+import App from './components/app.jsx';
 
 class Index extends React.Component {
   constructor(props) {
@@ -43,18 +44,15 @@ class Index extends React.Component {
 
 
   render() {
-    console.log('new state', this.state.activities);
+    // console.log('new state', this.state.activities);
     return (
       <div>
-        <h1>Trip collab</h1>
-        <div>
-          <SearchLocation changeLoc={this.onChangeLocation}/>
-          <AddPrice changeBudget={this.onChangePrice}/>
-          <AddCategory setActivities={this.setActivities}/>
-        </div>
+        <App />
+
       </div>
     );
   }
 }
+
 
 ReactDOM.render(<Index />, document.getElementById('app'));

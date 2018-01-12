@@ -1,9 +1,9 @@
 const axios = require('axios');
 // const config = require('./config/config');
 
-let filterBusinesses = (array) => {
-  return array.map(business => {
-
+// takes list of business info from Yelp API and extracts relevant data
+const filterBusinesses = (array) => {
+  return array.map((business) => {
     return {
       id: business.id,
       name: business.name,
@@ -14,8 +14,9 @@ let filterBusinesses = (array) => {
   });
 };
 
-let filterEvents = (array) => {
-  return array.map(event => {
+// takes list of event info from EventBrite API and extracts relevant data
+const filterEvents = (array) => {
+  return array.map((event) => {
     return {
       id: event.id,
       name: event.name.text,
@@ -27,7 +28,9 @@ let filterEvents = (array) => {
     };
   });
 };
-let getAxios = (queryURL, key, api, cb) => {
+
+// makes GET request to specified API
+const getAxios = (queryURL, key, api, cb) => {
   axios({
     method: 'get',
     url: queryURL,
@@ -48,68 +51,35 @@ let getAxios = (queryURL, key, api, cb) => {
     });
 };
 
-let getBusinessesOrEvents = (options, cb) => {
-  // parameters:
-
-  // let queryURL = `https://api.yelp.com/v3/businesses/search?categories=
-  // ${category}&location=${location}&price=${price}&limit=10&sort_by=rating`;
+// forms queryURL based on specified API and initiates GET request
+const getBusinessesOrEvents = (options, cb) => {
   console.log('api: ', options.api);
-  let queryURL = '';
-  let key = '';
-  let api = options.api;
+  let queryURL;
+  let key;
+  const params = options;
+  const { api } = params;
+
   if (api === 'yelp') {
     if (!options.categories) {
-      options.categories = '';
+      params.categories = '';
     } else if (Array.isArray(options.categories)) {
-      options.categories = options.categories.join(',');
+      params.categories = options.categories.join(',');
     }
+
     if (!options.price) {
-      options.price = '';
+      params.price = '';
     }
-     queryURL = `https://api.yelp.com/v3/businesses/search?term=${options.term}&categories=${options.categories}&location=${options.location}&price=${options.price}&limit=10&sort_by=rating`;
-     key = process.env.YELP_API_KEY;
+
+    queryURL = `https://api.yelp.com/v3/businesses/search?term=${options.term}&categories=${options.categories}&location=${options.location}&price=${options.price}&limit=10&sort_by=rating`;
+    key = process.env.YELP_API_KEY;
   }
 
   if (api === 'eventBrite') {
-     queryURL = `https://www.eventbriteapi.com/v3/events/search/?q=concerts+festivals+shows&location.address=${options.location}&sort_by=date`
-     key = process.env.EVENT_BRITE_API_KEY;
+    queryURL = `https://www.eventbriteapi.com/v3/events/search/?q=concerts+festivals+shows&location.address=${options.location}&sort_by=date`;
+    key = process.env.EVENT_BRITE_API_KEY;
   }
 
   getAxios(queryURL, key, api, cb);
 };
-
-// let getBusinessesFromYelp = (term, categories, location, price, cb) => {
-//   // parameters:
-
-//   // let queryURL = `https://api.yelp.com/v3/businesses/search?categories=
-//   // ${category}&location=${location}&price=${price}&limit=10&sort_by=rating`;
-//   if (!categories) {
-//     categories = '';
-//   } else if (Array.isArray(categories)) {
-//     categories = categories.join(',');
-//   }
-
-//   if (!price) {
-//     price = '';
-//   }
-
-
-//   let queryURL = `https://api.yelp.com/v3/businesses/search?term=${term}&categories=${categories}&location=${location}&price=${price}&limit=10&sort_by=rating`;
-
-
-//   axios({
-//     method: 'get',
-//     url: queryURL,
-//     headers: {
-//       'Authorization': `Bearer ${process.env.YELP_API_KEY}`
-//     },
-//   })
-//     .then((response) => {
-//       cb(filterBusinesses(response.data.businesses));
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// };
 
 module.exports.getBusinessesOrEvents = getBusinessesOrEvents;

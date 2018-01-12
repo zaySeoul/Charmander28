@@ -15,7 +15,7 @@ app.use(express.static(`${__dirname}/../react-client/dist`));
 // location, price, categories populated with dummy data unless client sends
 // params in req.body
 
-app.get('/eat', (req, res) => {
+app.post('/eat', (req, res) => {
   console.log('eat endpoint hit');
   const term = 'restaurants';
   const options = {
@@ -31,7 +31,7 @@ app.get('/eat', (req, res) => {
   });
 });
 
-app.get('/explore', (req, res) => {
+app.post('/explore', (req, res) => {
   console.log('explore endpoint hit');
   const term = 'tourism';
   const options = {
@@ -46,7 +46,7 @@ app.get('/explore', (req, res) => {
   });
 });
 
-app.get('/party', (req, res) => {
+app.post('/party', (req, res) => {
   console.log('party endpoint hit');
    const options = {
      location: req.body.location || 'chicago',
@@ -58,7 +58,7 @@ app.get('/party', (req, res) => {
   });
  });
 
-app.get('/sleep', (req, res) => {
+app.post('/sleep', (req, res) => {
   console.log('sleep endpoint hit');
   const term = 'hotels';
 

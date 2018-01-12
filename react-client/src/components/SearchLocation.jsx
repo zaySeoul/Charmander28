@@ -47,7 +47,6 @@ class SearchLocation extends React.Component {
           onChange={this.handleInputChange}
           onKeyPress={this.handleReturnKey}
           onBlur={this.onSetDestination}
-
         />
       </div>
     );

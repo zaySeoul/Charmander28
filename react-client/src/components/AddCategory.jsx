@@ -67,8 +67,8 @@ class AddCategory extends React.Component {
               </div>
               <div>
                 <label>
-                  <input type="checkbox" name="activities" value="fun" onClick={this.onCheckBoxClick} />
-              Fun
+                  <input type="checkbox" name="activities" value="explore" onClick={this.onCheckBoxClick} />
+              Explore
                 </label>
               </div>
             </form>

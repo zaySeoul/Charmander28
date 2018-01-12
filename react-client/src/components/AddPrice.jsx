@@ -18,7 +18,6 @@ class AddPrice extends React.Component {
 
   onSetPrice() {
     this.props.changeBudget(this.state.price);
-    });
   }
 
   render() {

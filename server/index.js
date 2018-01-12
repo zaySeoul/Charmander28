@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
 // const db = require('../database');
 const utils = require('./utils');
 
@@ -13,17 +12,17 @@ app.use(bodyParser.json());
 
 app.use(express.static(`${__dirname}/../react-client/dist`));
 
+// location, price, categories populated with dummy data unless client sends
+// params in req.body
+
 app.get('/eat', (req, res) => {
-  const requestBody = {
-    location: 'chicago',
-    price: 4
-  };
+  console.log('eat endpoint hit');
   const term = 'restaurants';
   const options = {
-    location: requestBody.location,
-    price: requestBody.price,
+    location: req.body.location || 'chicago',
+    price: req.body.price || 4,
     term: term,
-    categories: '',
+    categories: req.body.categories || '',
     api: 'yelp'
   };
 
@@ -33,16 +32,12 @@ app.get('/eat', (req, res) => {
 });
 
 app.get('/explore', (req, res) => {
+  console.log('explore endpoint hit');
   const term = 'tourism';
-  const categories = ['landmarks', 'galleries', 'parks', 'musuems'];
-  const location = req.body.location || 'chicago';
-  const price = '';
-
   const options = {
-    location: location,
-    price: price,
+    location: req.body.location || 'newyork',
     term: term,
-    categories: categories,
+    categories: req.body.categories || ['landmarks', 'galleries', 'parks', 'musuems'],
     api: 'yelp'
   };
 
@@ -52,29 +47,25 @@ app.get('/explore', (req, res) => {
 });
 
 app.get('/party', (req, res) => {
-   const location = req.body.location || 'chicago';
+  console.log('party endpoint hit');
    const options = {
-     location: location,
+     location: req.body.location || 'chicago',
      api: 'eventBrite'
    };
 
   utils.getBusinessesOrEvents(options, (data) => {
     res.send(data);
   });
-
  });
 
 app.get('/sleep', (req, res) => {
+  console.log('sleep endpoint hit');
   const term = 'hotels';
-  const location = req.body.location || 'chicago';
-  const price = req.body.price || '1,2,3';
-  const categories = '';
 
   const options = {
-    location: location,
-    price: price,
+    location: req.body.location || 'philadelphia',
+    price: req.body.price || '3',
     term: term,
-    categories: categories,
     api: 'yelp'
   };
 
@@ -86,33 +77,3 @@ app.get('/sleep', (req, res) => {
 app.listen(port, () => {
   console.log('listening on port 3000!');
 });
-
-// Notes
-// var o = {p: 42, q: true};
-// var {p, q} = o;
-
-// when to use res.end vs. res.json
-
-
-// app.get('/eat', (req, res) => {
-//   // dummy request object
-//   // req.body = {
-//   //   'location': 'chicago',
-//   //   'cost': 4
-//   // }
-//   const requestBody = {
-//     location: 'chicago',
-//     categories: ['asian', 'mexican'],
-//     price: 4
-//   };
-//   const term = 'restaurants';
-//   // const location = 'req.body.location';
-//   // const cost = req.body.cost;
-//   const location = requestBody.location;
-//   const price = requestBody.price;
-//   const categories = requestBody.categories;
-
-//   utils.getBusinessesFromYelp(term, categories, location, price, (data) => {
-//     res.send(data);
-//   });
-// });

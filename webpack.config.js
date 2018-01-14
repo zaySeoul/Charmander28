@@ -22,7 +22,18 @@ module.exports = {
         // },
         loaders: ['babel-loader?presets[]=react,presets[]=es2015'],
       },
+      {
+        test: /\.png$/,
+        loader: 'url-loader?limit=100000',
+      },
+      {
+        test: /\.jpg$/,
+        loader: 'file-loader',
+      },
     ],
+  },
+  node: {
+  fs: 'empty',
   },
 };
 

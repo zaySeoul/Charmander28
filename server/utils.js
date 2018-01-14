@@ -20,7 +20,7 @@ const filterEvents = (array) => {
     return {
       id: event.id,
       name: event.name.text,
-      imageUrl: event.logo.original.url,
+      imageUrl: event.logo.url,
       url: event.url,
       description: event.description.text,
       start: event.start.local,

@@ -16,9 +16,6 @@ module.exports = {
       {
         test: /\.jsx?/,
         loaders: ['babel-loader?presets[]=react,presets[]=es2015'],
-        query: {
-          presets: ['es2015', 'react', 'stage-0'],
-        },
       },
       {
         test: /\.png$/,
@@ -29,5 +26,8 @@ module.exports = {
         loader: 'file-loader',
       },
     ],
+  },
+  node: {
+  fs: 'empty',
   },
 };

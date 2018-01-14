@@ -11,6 +11,17 @@ class TripView extends React.Component {
 
   render() {
     return (
+      <div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav">
+              <a className="nav-item nav-link active" href="#">Eat</a>
+              <a className="nav-item nav-link active" href="#">Party</a>
+              <a className="nav-item nav-link active" href="#">Sleep</a>
+              <a className="nav-item nav-link active" href="#">Explore</a>
+             </div>
+          </div>
+        </nav>
       <div className="container">
         <div className="row">
           {this.props.eat.map(item =>
@@ -33,8 +44,25 @@ class TripView extends React.Component {
           )}
         </div>
       </div>
+      </div>
     );
   }
 }
 
 export default TripView;
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+    </div>
+  </div>
+</nav>

@@ -5,6 +5,7 @@ let EatView = (props) => {
 
   return (
     <div className="container">
+    {console.log('this is the props', props)}
       <div className="row">
         {props.eat.map(item =>
           <EatViewListEntry key={props.eat.indexOf(item)} item={item} />
@@ -16,4 +17,3 @@ let EatView = (props) => {
 
 
 export default EatView;
-

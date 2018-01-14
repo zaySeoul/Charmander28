@@ -6,7 +6,7 @@ import AddPrice from './AddPrice.jsx';
 import Header from './navHeader.jsx';
 import AddCategory from './AddCategory.jsx';
 import axios from 'axios';
-import EatView from './EatView.jsx';
+import TripView from './TripView.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,6 +28,8 @@ class App extends React.Component {
     this.go = this.go.bind(this);
     this.getExploreData = this.getExploreData.bind(this);
     this.getEatData = this.getEatData.bind(this);
+    this.getPartyData = this.getPartyData.bind(this);
+    this.getSleepData = this.getSleepData.bind(this);
     this.changeTripView = this.changeTripView.bind(this);
   }
 
@@ -52,12 +54,14 @@ class App extends React.Component {
   }
 
   go() {
+    console.log('activities list', this.state.activities);
     if (this.state.activities.includes('explore') && this.state.location !== '' && this.state.price !== '') {
       axios.post('/explore', {
         location: this.state.location,
         price: this.state.price,
       })
         .then(response => {
+          console.log('explore data from server', response);
            this.getExploreData(response.data);
         })
         .catch(error => {
@@ -71,7 +75,8 @@ class App extends React.Component {
         price: this.state.price,
       })
         .then(response => {
-           console.log('successfull', response);
+           console.log('sleep data from server', response);
+           this.getSleepData(response.data);
         })
         .catch(error => {
           console.log('error..!!', error);
@@ -85,7 +90,7 @@ class App extends React.Component {
         price: parseInt(this.state.price),
       })
         .then(response => {
-           console.log('successfull', response);
+           console.log('eat data from server', response);
            this.getEatData(response.data);
         })
         .catch(error => {
@@ -94,12 +99,14 @@ class App extends React.Component {
     }
 
       if (this.state.activities.includes('party') && this.state.location !== '' && this.state.price !== '') {
+        console.log('party if condition');
       axios.post('/party', {
         location: this.state.location,
         price: this.state.price,
       })
         .then(response => {
-           console.log('successfull', response);
+           console.log('party data from server', response.data);
+           this.getPartyData(response.data);
         })
         .catch(error => {
           console.log('error..!!', error);
@@ -127,13 +134,25 @@ class App extends React.Component {
     });
   }
 
+  getPartyData(data) {
+    this.setState({
+      party: data,
+    });
+  }
+
+  getSleepData(data) {
+    this.setState({
+      sleep: data,
+    });
+  }
+
   render() {
     console.log('im invoked');
     const { view } = this.state;
     console.log('state view', this.state.view);
     if (view === 'trip') {
-      return <EatView eat={this.state.eat} />
-    } else if(view === 'home') {
+      return <TripView eat={this.state.eat} party={this.state.party} sleep={this.state.sleep} explore={this.state.explore}/ >
+    } else if (view === 'home') {
         return (
       <div>
         <div>

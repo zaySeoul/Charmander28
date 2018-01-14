@@ -7,7 +7,6 @@ let PartyView = (props) => {
     <div className="container">
       <div className="row">
         {props.party.map(item =>
-
           <PartyViewListEntry key={props.party.indexOf(item)} item={item} /> )}
       </div>
     </div>

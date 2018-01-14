@@ -16,7 +16,8 @@ const filterBusinesses = (array) => {
 
 // takes list of event info from EventBrite API and extracts relevant data
 const filterEvents = (array) => {
-  return array.map((event) => {
+  const top10 = array.slice(0,9);
+  return top10.map((event) => {
     return {
       id: event.id,
       name: event.name.text,

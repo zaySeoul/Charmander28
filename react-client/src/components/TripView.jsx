@@ -40,4 +40,3 @@ class TripView extends React.Component {
 }
 
 export default TripView;
-

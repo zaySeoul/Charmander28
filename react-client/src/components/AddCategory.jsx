@@ -46,33 +46,24 @@ class AddCategory extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
-            <form>
-              <div>
-                <label>
-                  <input type="checkbox" name="activities" value="eat" onClick={this.onCheckBoxClick} />
-                 Eat
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" name="activities" value="party" onClick={this.onCheckBoxClick} />
-                  Party
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" name="activities" value="sleep" onClick={this.onCheckBoxClick} />
-                  Sleep
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" name="activities" value="explore" onClick={this.onCheckBoxClick} />
-              Explore
-                </label>
-              </div>
-            </form>
-
+            <p className="categoryText">
+              <label className="oneLabel">
+                <input className="categoryBox" type="checkbox" name="activities" value="eat" onClick={this.onCheckBoxClick} />
+                Eat
+              </label>
+              <label>
+                <input className="categoryBox" type="checkbox" name="activities" value="party" onClick={this.onCheckBoxClick} />
+                Party
+              </label>
+              <label>
+                <input className="categoryBox" type="checkbox" name="activities" value="sleep" onClick={this.onCheckBoxClick} />
+                Sleep
+              </label>
+              <label>
+                <input className="categoryBox" type="checkbox" name="activities" value="explore" onClick={this.onCheckBoxClick} />
+            Explore
+              </label>
+          </p>
           </div>
         </div>
       </div>
@@ -81,15 +72,3 @@ class AddCategory extends React.Component {
 }
 
 export default AddCategory;
-
-
-
-
-
-
-
-
-
-
-
-

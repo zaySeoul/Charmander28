@@ -4,11 +4,20 @@ import SleepViewListEntry from './SleepViewListEntry.jsx';
 let SleepView = (props) => {
 
   return (
-    <div className="container">
-      <div className="row">
-        {props.sleep.map(item =>
-          <SleepViewListEntry key={props.sleep.indexOf(item)} item={item} /> )}
-      </div>
+    <div className="viewTable">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.sleep.map(item =>
+            <SleepViewListEntry key={props.sleep.indexOf(item)} item={item} />
+          ) }
+        </tbody>
+      </table>
     </div>
   );
 };

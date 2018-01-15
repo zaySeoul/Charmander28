@@ -44,7 +44,7 @@ class SearchLocation extends React.Component {
           className="form-control"
           type="text"
           value={this.state.value}
-          placeholder="What's your destination"
+          placeholder="I want to go to..."
           onChange={this.handleInputChange}
           onKeyPress={this.handleReturnKey}
           onBlur={this.onSetDestination}

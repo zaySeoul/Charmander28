@@ -155,16 +155,21 @@ class App extends React.Component {
     } else if (view === 'home') {
         return (
       <div>
-        <div>
-          <h1>Trip collab</h1>
+        <div className="headers">
+          <h1>Voyage</h1>
+          <h5>Ready to plan out your next getaway?</h5>
+        </div>
+        <div className="searchContainer">
           <div>
-            <SearchLocation changeLoc={this.onChangeLocation} />
-            <AddPrice changeBudget={this.onChangePrice} />
-            <AddCategory setActivities={this.setActivities} />
+            <div>
+              <SearchLocation changeLoc={this.onChangeLocation} />
+              <AddPrice changeBudget={this.onChangePrice} />
+              <AddCategory setActivities={this.setActivities} />
+            </div>
           </div>
         </div>
-        <div>
-          <button type="button" className="btn btn-primary mb-2" onClick={this.go} > GO </button>
+        <div className="goButton">
+          <button type="button" className="btn btn-primary mb-2" onClick={this.go} > Lets Go! </button>
         </div>
       </div>
     );
@@ -172,27 +177,6 @@ class App extends React.Component {
   }
 }
 
-//   render() {
-//     return (
-//       <div>
-//         <div>
-//           <h1>Trip collab</h1>
-//           <div>
-//             <SearchLocation changeLoc={this.onChangeLocation} />
-//             <AddPrice changeBudget={this.onChangePrice} />
-//             <AddCategory setActivities={this.setActivities} />
-//           </div>
-//         </div>
-//         <div>
-//           <button type="button" className="btn btn-primary mb-2" onClick={this.go} > GO </button>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-
 ReactDOM.render(<App />, document.getElementById('app'));
 
 export default App;
-

@@ -84,6 +84,8 @@ let saveTrip = (tripInfo, cb) => {
     }
   });
 
+
+
   // User.find({googleId: currentUser}, (err, user) => {
   //   user[0].trips = user[0].trips.concat(trip_id);
   //   user[0].save(err => {
@@ -94,7 +96,18 @@ let saveTrip = (tripInfo, cb) => {
   // });
 };
 
+let getAllTrips = (cb) => {
+    Trip.find({}, (err, trips) => {
+      if (err) {
+        return handleError(err);
+      } else {
+        cb(trips);
+      }
+    });
+  };
+
 // // test db functionality
 // saveTrip(testTrip2, 'daniel');
 
 module.exports.saveTrip = saveTrip;
+module.exports.getAllTrips = getAllTrips;

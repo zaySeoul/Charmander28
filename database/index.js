@@ -3,24 +3,26 @@ mongoose.connect('mongodb://localhost/tripcollab');
 
 let restaurantSchema = mongoose.Schema({
   name: String,
-  price: Number,
-  rating: Number
+  imageUrl: String,
+  url: String
 });
 
 let hotelSchema = mongoose.Schema({
   name: String,
-  price: Number,
-  rating: Number
+  imageUrl: String,
+  url: String
 });
 
 let eventSchema = mongoose.Schema({
   name: String,
-  start: Date,
-  end: Date
+  imageUrl: String,
+  url: String
 });
 
 let attractionSchema = mongoose.Schema({
-  name: String
+  name: String,
+  imageUrl: String,
+  url: String
 });
 
 let userSchema = mongoose.Schema({

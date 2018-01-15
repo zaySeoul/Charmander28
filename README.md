@@ -28,7 +28,8 @@ Used for managing trips for individuals. Allows a user to search the events,rest
 * Node
 * Express
 * React
-* Sequelizer
+* Mongo DB
+* mongoose
 * Passport
 * body-parser
 * Axios
@@ -37,14 +38,19 @@ Used for managing trips for individuals. Allows a user to search the events,rest
 * react-dom
 * webpack
 * babel
+* react-router-dom
+* bootstrap
 
 ## Development
-
+Once you have forked the repo from https://github.com/Charmander28/Charmander28 , install all the dependencies.
 ### Installing Dependencies
 
 From within the root directory:
 
 npm install
+
+## Getting the tokens for the API calls
+We use yelp, Eventbrite API’s to collect the data, so you will need API keys for them to make requests.
 
 ## Contributing
 

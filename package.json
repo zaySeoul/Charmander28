@@ -32,10 +32,7 @@
     "jquery": "^3.1.1",
     "mongoose": "^4.8.6",
     "mysql": "^2.13.0",
-<<<<<<< HEAD
     "passport": "^0.4.0",
-=======
->>>>>>> Install passport and facebook/google strategies
     "passport-facebook": "^2.1.1",
     "passport-google-oauth20": "^1.0.0",
     "pg": "^6.4.2",

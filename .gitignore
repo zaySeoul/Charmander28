@@ -36,4 +36,4 @@ node_modules/
 server/config/config.js
 
 package-lock.json
-react-client/dist/bundle.js
+

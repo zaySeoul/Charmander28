@@ -2,8 +2,8 @@ const express = require('express');
 const passportSetup = require('./config/passport-setup');
 const authRoutes = require('./routes/auth-routes');
 const bodyParser = require('body-parser');
-// const db = require('../database');
-// const mongoose = require('mongoose');
+const db = require('../database');
+const mongoose = require('mongoose');
 const utils = require('./utils');
 
 const app = express();
@@ -83,6 +83,12 @@ app.post('/sleep', (req, res) => {
     res.send(data);
   });
 });
+
+app.post('/saveTrip', (req, res) => {
+  db.saveTrip(req.body, () => {
+    res.sendStatus(201);
+  });
+})
 
 app.listen(port, () => {
   console.log('listening on port 3000!');

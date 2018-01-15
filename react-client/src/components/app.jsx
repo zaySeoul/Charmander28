@@ -177,26 +177,6 @@ class App extends React.Component {
   }
 }
 
-//   render() {
-//     return (
-//       <div>
-//         <div>
-//           <h1>Trip collab</h1>
-//           <div>
-//             <SearchLocation changeLoc={this.onChangeLocation} />
-//             <AddPrice changeBudget={this.onChangePrice} />
-//             <AddCategory setActivities={this.setActivities} />
-//           </div>
-//         </div>
-//         <div>
-//           <button type="button" className="btn btn-primary mb-2" onClick={this.go} > GO </button>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-
 ReactDOM.render(<App />, document.getElementById('app'));
 
 export default App;

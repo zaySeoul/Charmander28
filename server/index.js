@@ -84,11 +84,17 @@ app.post('/sleep', (req, res) => {
   });
 });
 
-app.post('/saveTrip', (req, res) => {
+app.post('/trips', (req, res) => {
   db.saveTrip(req.body, () => {
     res.sendStatus(201);
   });
-})
+});
+
+app.get('/trips', (req, res) => {
+  db.getAllTrips((trips) => {
+    res.send(trips);
+  });
+});
 
 app.listen(port, () => {
   console.log('listening on port 3000!');

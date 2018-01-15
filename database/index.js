@@ -63,7 +63,7 @@ const Trip = mongoose.model('Trip', tripSchema);
 //   if(err) console.log(err);
 // });
 
-let saveTrip = (tripInfo, currentUser) => {
+let saveTrip = (tripInfo, cb) => {
   const trip = new Trip({
     name: tripInfo.name,
     location: tripInfo.location,
@@ -79,18 +79,22 @@ let saveTrip = (tripInfo, currentUser) => {
   trip.save(err => {
     if (err) {
       console.log(err);
+    } else {
+      cb();
     }
   });
 
-  User.find({googleId: currentUser}, (err, user) => {
-    user[0].trips = user[0].trips.concat(trip_id);
-    user[0].save(err => {
-      if(err) {
-        console.log(err);
-      }
-    });
-  });
+  // User.find({googleId: currentUser}, (err, user) => {
+  //   user[0].trips = user[0].trips.concat(trip_id);
+  //   user[0].save(err => {
+  //     if(err) {
+  //       console.log(err);
+  //     }
+  //   });
+  // });
 };
 
 // // test db functionality
 // saveTrip(testTrip2, 'daniel');
+
+module.exports.saveTrip = saveTrip;

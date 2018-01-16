@@ -15,6 +15,7 @@ A collaborative way to organize group trips
 1. [Requirements](#requirements)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
+    1. [Create env File](#create-env-file)
     1. [Tasks](#tasks)
 1. [Roadmap](#roadmap)
 1. [Contributing](#contributing)
@@ -48,9 +49,15 @@ Once you have forked the repo from https://github.com/Charmander28/Charmander28 
 From within the root directory:
 
 npm install
+------------------(Steps below will require a .env file)------
 npm run react-dev
 npm run server-dev
 
+### Create env File
+
+Inside the root folder, create a new file named ".env". Inside this file you will want to have to following:
+`export YELP_API_KEY="(paste key value here)"`
+`export EVENT_BRITE_API_KEY="(paste key value here)"`
 
 ## Getting the tokens for the API calls
 We use yelp, Eventbrite API’s to collect the data, so you will need API keys for them to make requests. There are links below to create your own API key. 

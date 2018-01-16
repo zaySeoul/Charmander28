@@ -9,11 +9,6 @@ import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 class TripView extends React.Component {
   constructor(props) {
     super(props);
-    this.onHomeClick = this.onHomeClick.bind(this);
-  }
-
-  onHomeClick(val) {
-    this.props.changeTripView(val);
   }
 
   render() {
@@ -27,7 +22,6 @@ class TripView extends React.Component {
                 <Link to={'/party'}>Party</Link>
                 <Link to={'/sleep'}>Sleep</Link>
                 <Link to={'/explore'}>Explore</Link>
-                <a className="nav-item nav-link active" onClick={() => { this.onHomeClick('home') } }>Go to search</a>
               </div>
             </div>
           </nav>

@@ -49,10 +49,11 @@ From within the root directory:
 
 npm install
 
+
 ## Getting the tokens for the API calls
 We use yelp, Eventbrite API’s to collect the data, so you will need API keys for them to make requests. There are links below to create your own API key. 
-Yelp API Key: https://www.yelp.com/fusion
-Eventbrite API Key: https://www.eventbrite.com/developer/v3/quickstart/
+* Yelp API Key: https://www.yelp.com/fusion
+* Eventbrite API Key: https://www.eventbrite.com/developer/v3/quickstart/
 
 
 ## Front End Development

@@ -1,5 +1,5 @@
 const express = require('express');
-const passportSetup = require('./config/passport-setup');
+//const passportSetup = require('./config/passport-setup');
 const authRoutes = require('./routes/auth-routes');
 const bodyParser = require('body-parser');
 const db = require('../database');

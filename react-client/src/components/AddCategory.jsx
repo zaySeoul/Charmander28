@@ -4,7 +4,6 @@ import $ from 'jquery';
 
 class AddCategory extends React.Component {
   constructor(props) {
-    //console.log('im here in AddCategory', props);
     super(props);
     this.state = {
       category: [],
@@ -36,12 +35,12 @@ class AddCategory extends React.Component {
     }, () => { this.setUserActivities(); });
   }
 
+  //setting the activities state in spp.jsx component
   setUserActivities() {
     this.props.setActivities(this.state.category);
   }
 
   render() {
-    //console.log('state', this.state.category);
     return (
       <div className="container">
         <div className="row">

@@ -2,8 +2,8 @@ const express = require('express');
 const passportSetup = require('./config/passport-setup');
 const authRoutes = require('./routes/auth-routes');
 const bodyParser = require('body-parser');
-// const db = require('../database');
-// const mongoose = require('mongoose');
+const db = require('../database');
+const mongoose = require('mongoose');
 const utils = require('./utils');
 
 const app = express();
@@ -16,14 +16,14 @@ app.use(bodyParser.json());
 app.use(express.static(`${__dirname}/../react-client/dist`));
 app.set('view engine', 'ejs');
 
-app.use('/auth', authRoutes);
+// app.use('/auth', authRoutes);
 
 // location, price, categories populated with dummy data unless client sends
 // params in req.body
 
-app.get('/auth/home', (req, res) => {
-  res.render('home');
-});
+// app.get('/auth/home', (req, res) => {
+//   res.render('home');
+// });
 
 app.post('/eat', (req, res) => {
   console.log('eat endpoint hit');
@@ -81,6 +81,18 @@ app.post('/sleep', (req, res) => {
 
   utils.getBusinessesOrEvents(options, (data) => {
     res.send(data);
+  });
+});
+
+app.post('/trips', (req, res) => {
+  db.saveTrip(req.body, () => {
+    res.sendStatus(201);
+  });
+});
+
+app.get('/trips', (req, res) => {
+  db.getAllTrips((trips) => {
+    res.send(trips);
   });
 });
 

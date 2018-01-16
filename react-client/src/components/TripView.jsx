@@ -12,6 +12,10 @@ class TripView extends React.Component {
     this.onHomeClick = this.onHomeClick.bind(this);
   }
 
+  onHomeClick(val) {
+    this.props.changeTripView(val);
+  }
+
   render() {
     return (
       <BrowserRouter>

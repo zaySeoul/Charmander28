@@ -11,4 +11,3 @@ let EatViewListEntry = (props) => {
 
 export default EatViewListEntry;
 
-

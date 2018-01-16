@@ -56,7 +56,9 @@ npm run server-dev
 ### Create env File
 
 Inside the root folder, create a new file named ".env". Inside this file you will want to have to following:
+
 `export YELP_API_KEY="(paste key value here)"`
+
 `export EVENT_BRITE_API_KEY="(paste key value here)"`
 
 ## Getting the tokens for the API calls

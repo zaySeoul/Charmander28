@@ -20,6 +20,7 @@ Plan your next getaway.
 1. [Roadmap](#roadmap)
 1. [Contributing](#contributing)
 1. [Front End Development](#front-end-development)
+1. [Back End Development](#back-end-development)
 ## Usage
 
 Used for managing trips for individuals. Allows a user to search the events,restaurents,activities around the destination place. Users can also save their trips and collab with other users.
@@ -78,6 +79,16 @@ The app.jsx file is the new top-level container for the app. Ideally when integr
 React-Router is more seamlessly integrated into the TripView. The `<BrowserRouter>` tag acts as the parent `<div>` and maintains the history of the page. This allows `<Route>`, `<Link>`, and `<Switch>` to work as intended as all of the aforementioned tags require the user's browser history. This will also allow future integration of the "back" and "forward" browser features to allow users to backtrack or trace their history. 
 
 `<Peter W>`
+
+## Back End Development 
+
+Upon search the server listens for post requests to the following endpoints: 
+* /Eat [YELP]
+* /Sleep [YELP]
+* /Party [Event Brite]
+* /Party [YELP]
+
+The user's search input determines which endpoints are hit. Whenever an endpoint is hit, a GET request is made to the corresponding API, and the data from the API is returned to the client.
 
 ## Contributing
 

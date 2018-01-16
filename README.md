@@ -90,7 +90,7 @@ Upon search the server listens for post requests to the following endpoints:
 
 The user's search input determines which endpoints are hit. Whenever an endpoint is hit, a GET request is made to the corresponding API, and the data from the API is returned to the client.  Helper functions for the API requests are located in server/utils.js
 
-In the future a user will be able to save their trips to a database and then retrieve them later (see database/index.js).
+In the future a user will be able to log in and save their trips to a database and then retrieve them later (see database/index.js and also the commented out code in config/passport-setup.js).
 
 ## Contributing
 

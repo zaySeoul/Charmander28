@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.static(`${__dirname}/../react-client/dist`));
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
 
 // app.use('/auth', authRoutes);
 

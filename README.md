@@ -1,4 +1,4 @@
-## Trip Collab
+## Voyage
 
 A collaborative way to organize group trips
 

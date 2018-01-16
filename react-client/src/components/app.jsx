@@ -113,13 +113,13 @@ class App extends React.Component {
           console.log('error..!!', error);
         });
     }
-    this.changeTripView('trip');
+    this.changeTripView();
   }
 
 
-  changeTripView(val) {
+  changeTripView() {
     this.setState({
-      view: val,
+      view: 'trip',
     }, () => {  console.log('change trip view') });
   }
 
@@ -152,7 +152,7 @@ class App extends React.Component {
     const { view } = this.state;
     console.log('state view', this.state.view);
     if (view === 'trip') {
-      return <TripView eat={this.state.eat} party={this.state.party} sleep={this.state.sleep} explore={this.state.explore} changeTripView={this.changeTripView} />
+      return <TripView eat={this.state.eat} party={this.state.party} sleep={this.state.sleep} explore={this.state.explore} />
     } else if (view === 'home') {
         return (
       <div>

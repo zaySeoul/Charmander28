@@ -27,6 +27,8 @@ class SearchLocation extends React.Component {
     }
   }
 
+  // Not used in current iteration
+  // Was initially left in case we decided to add a submit button for the location
   handleClick(e) {
     e.preventDefault();
     this.props.searchLocation(this.target.name);
@@ -36,6 +38,9 @@ class SearchLocation extends React.Component {
   onSetDestination() {
     this.props.changeLoc(this.state.location);
   }
+
+  // onBlur acts as a redundancy to onKeyPress
+  // in case user forgets/doesn't know to press "Enter"
 
   render() {
     return (

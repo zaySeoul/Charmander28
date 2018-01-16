@@ -16,6 +16,9 @@ class TripView extends React.Component {
     this.props.changeTripView(val);
   }
 
+// <Link> tag used to direct user to proper page renders
+// More info here: https://reacttraining.com/react-router/web/api/Link
+
   render() {
     return (
       <BrowserRouter>
@@ -42,6 +45,11 @@ class TripView extends React.Component {
       </BrowserRouter>
     );
   }
+
+  // <Switch> tag used to ensure that only the matching path component will render
+  // Example: Without <Switch>, "/e" and "/eat" path components would both render
+  // because "/e" path matches the first two strings in "/eat"
+  // More info here: https://reacttraining.com/react-router/web/api/Switch  
 
 }
 

@@ -11,4 +11,3 @@ let PartyViewListEntry = (props) => {
 
 export default PartyViewListEntry;
 
-

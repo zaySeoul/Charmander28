@@ -113,13 +113,13 @@ class App extends React.Component {
           console.log('error..!!', error);
         });
     }
-    this.changeTripView();
+    this.changeTripView('trip');
   }
 
 
-  changeTripView() {
+  changeTripView(val) {
     this.setState({
-      view: 'trip',
+      view: val,
     }, () => {  console.log('change trip view') });
   }
 

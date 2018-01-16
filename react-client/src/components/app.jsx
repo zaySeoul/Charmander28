@@ -70,6 +70,7 @@ class App extends React.Component {
     }
 
      if (this.state.activities.includes('sleep') && this.state.location !== '' && this.state.price !== '') {
+      console.log('inside sleep');
       axios.post('/sleep', {
         location: this.state.location,
         price: this.state.price,
@@ -112,13 +113,13 @@ class App extends React.Component {
           console.log('error..!!', error);
         });
     }
-    this.changeTripView();
+    this.changeTripView('trip');
   }
 
 
-  changeTripView() {
+  changeTripView(val) {
     this.setState({
-      view: 'trip',
+      view: val,
     }, () => {  console.log('change trip view') });
   }
 
@@ -151,7 +152,7 @@ class App extends React.Component {
     const { view } = this.state;
     console.log('state view', this.state.view);
     if (view === 'trip') {
-      return <TripView eat={this.state.eat} party={this.state.party} sleep={this.state.sleep} explore={this.state.explore}/ >
+      return <TripView eat={this.state.eat} party={this.state.party} sleep={this.state.sleep} explore={this.state.explore} changeTripView={this.changeTripView} />
     } else if (view === 'home') {
         return (
       <div>

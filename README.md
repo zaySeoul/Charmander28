@@ -48,6 +48,8 @@ Once you have forked the repo from https://github.com/Charmander28/Charmander28 
 From within the root directory:
 
 npm install
+npm run react-dev
+npm run server-dev
 
 
 ## Getting the tokens for the API calls

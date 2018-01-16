@@ -63,9 +63,9 @@ The search bar is a simple input field implemented as a stateful component to pa
 
 The app.jsx file is the new top-level container for the app. In integrating React-Router,  one of the challenges we faced was in integrating the switching of the App View to the Trip View upon sending the appropriate information to the server. Ideally, the View would only change upon successful receipt of data back from the server. However, as we were unable to successfully implement this function into the App file, the alternative was to simply change the state of the view which would then cause the Trip View to render in place. This is done without the use of React-Router inside of the "go" function. 
 
-With a more focused sense of direction we were able to integrate React-Router into the TripView seamlessly. The <BrowserRouter> tag acts as the parent <div> and maintains the history of the page. This allows "<Route>", "<Link>", and "<Switch>" to work as intended as the Route all of the aforementioned tags require the user's browser history. This will also allow future integration of the "back" and "forward" browser features to allow users to backtrack or trace their history. 
+With a more focused sense of direction we were able to integrate React-Router into the TripView seamlessly. The <BrowserRouter> tag acts as the parent <div> and maintains the history of the page. This allows `<Route>`, `<Link>`, and `<Switch>` to work as intended as the Route all of the aforementioned tags require the user's browser history. This will also allow future integration of the "back" and "forward" browser features to allow users to backtrack or trace their history. 
 
--Peter W
+`<Peter W>`
 
 ## Contributing
 

@@ -1,6 +1,6 @@
 ## Voyage
 
-A collaborative way to organize group trips
+Plan your next getaway.
 
 ## Team
 

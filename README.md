@@ -60,7 +60,7 @@ We use yelp, Eventbrite API’s to collect the data, so you will need API keys f
 
 ## Front End Development
 
-React, Axios, and React-Router were used heavily in the creation of this project. During the initial stages of this project we had a general idea of the direction of the project but did not know whether to go with an SPA design or not. This lead to some back-tracking and re-writing of code, as well as making one of our pre-existing files obsolete. There is an index.jsx file left over during our re-write process. 
+React, Axios, and React-Router were used heavily in the creation of this project. During the initial stages of this project we had a general idea of the direction of the project but did not know whether to go with an SPA design or not. This led to some back-tracking and re-writing of code, as well as making one of our pre-existing files obsolete. There is an index.jsx file left over during our re-write process. 
 
 The search bar is a simple input field implemented as a stateful component to pass data back to the parent component. It is set to update it's value upon any change made inside the field, and it's state will update upon pressing the return key or on deselection of the field (onBlur). 
 

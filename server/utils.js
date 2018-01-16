@@ -1,5 +1,5 @@
 const axios = require('axios');
-// const config = require('./config/config');
+
 
 // takes list of business info from Yelp API and extracts relevant data
 const filterBusinesses = (array) => {

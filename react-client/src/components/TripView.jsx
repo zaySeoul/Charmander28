@@ -9,11 +9,6 @@ import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 class TripView extends React.Component {
   constructor(props) {
     super(props);
-    this.onHomeClick = this.onHomeClick.bind(this);
-  }
-
-  onHomeClick(val) {
-    this.props.changeTripView(val);
   }
 
 // <Link> tag used to direct user to proper page renders

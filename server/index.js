@@ -1,5 +1,5 @@
 const express = require('express');
-const passportSetup = require('./config/passport-setup');
+//const passportSetup = require('./config/passport-setup');
 const authRoutes = require('./routes/auth-routes');
 const bodyParser = require('body-parser');
 const db = require('../database');
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.static(`${__dirname}/../react-client/dist`));
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
 
 // app.use('/auth', authRoutes);
 

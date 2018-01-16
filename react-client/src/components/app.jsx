@@ -33,13 +33,14 @@ class App extends React.Component {
     this.changeTripView = this.changeTripView.bind(this);
   }
 
+  // sets the location state
   onChangeLocation(destination) {
     this.setState({
       location: destination,
     }, ()=>{console.log('Destination has been set!', this.state.location);});
-
   }
 
+  // sets the price state
   onChangePrice(value) {
     this.setState({
       price: value,
@@ -47,14 +48,15 @@ class App extends React.Component {
     this.setActivities = this.setActivities.bind(this);
   }
 
+  // sets the activities state
   setActivities(data) {
     this.setState({
       activities: data,
     });
   }
 
+  // this method will get called when clicked on GO button
   go() {
-    console.log('activities list', this.state.activities);
     if (this.state.activities.includes('explore') && this.state.location !== '' && this.state.price !== '') {
       axios.post('/explore', {
         location: this.state.location,
@@ -84,7 +86,6 @@ class App extends React.Component {
     }
 
      if (this.state.activities.includes('eat') && this.state.location !== '' && this.state.price !== '') {
-      console.log('eat');
       axios.post('/eat', {
         location: this.state.location,
         price: parseInt(this.state.price),
@@ -99,7 +100,6 @@ class App extends React.Component {
     }
 
       if (this.state.activities.includes('party') && this.state.location !== '' && this.state.price !== '') {
-        console.log('party if condition');
       axios.post('/party', {
         location: this.state.location,
         price: this.state.price,
@@ -115,31 +115,35 @@ class App extends React.Component {
     this.changeTripView();
   }
 
-
+//sets the trip view
   changeTripView() {
     this.setState({
       view: 'trip',
     }, () => {  console.log('change trip view') });
   }
 
+  // sets the state with the explore data which is coming from server
   getExploreData(data) {
     this.setState({
       explore: data,
     });
   }
 
+  // sets the state with the eat data which is coming from server
   getEatData(data) {
     this.setState({
       eat: data,
     });
   }
 
+  // sets the state with the party data which is coming from server
   getPartyData(data) {
     this.setState({
       party: data,
     });
   }
 
+  // sets the state with the sleep data which is coming from server
   getSleepData(data) {
     this.setState({
       sleep: data,
@@ -151,27 +155,27 @@ class App extends React.Component {
     const { view } = this.state;
     console.log('state view', this.state.view);
     if (view === 'trip') {
-      return <TripView eat={this.state.eat} party={this.state.party} sleep={this.state.sleep} explore={this.state.explore}/ >
+      return <TripView eat={this.state.eat} party={this.state.party} sleep={this.state.sleep} explore={this.state.explore} />
     } else if (view === 'home') {
-        return (
-      <div>
-        <div className="headers">
-          <h1>Voyage</h1>
-          <h5>Ready to plan out your next getaway?</h5>
-        </div>
-        <div className="searchContainer">
-          <div>
+      return (
+        <div>
+          <div className="headers">
+            <h1>Voyage</h1>
+            <h5>Ready to plan out your next getaway?</h5>
+          </div>
+          <div className="searchContainer">
             <div>
-              <SearchLocation changeLoc={this.onChangeLocation} />
-              <AddPrice changeBudget={this.onChangePrice} />
-              <AddCategory setActivities={this.setActivities} />
+              <div>
+                <SearchLocation changeLoc={this.onChangeLocation} />
+                <AddPrice changeBudget={this.onChangePrice} />
+                <AddCategory setActivities={this.setActivities} />
+              </div>
             </div>
           </div>
+          <div className="goButton">
+            <button type="button" className="btn btn-primary mb-2" onClick={this.go} > Lets Go! </button>
+          </div>
         </div>
-        <div className="goButton">
-          <button type="button" className="btn btn-primary mb-2" onClick={this.go} > Lets Go! </button>
-        </div>
-      </div>
     );
     }
   }
